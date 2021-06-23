@@ -1,0 +1,113 @@
+
+    <!-- Navbar-->
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EVALUACIÓN SUMATIVA – UNIDAD 2</a>
+          <ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+          </ul>
+        </div>
+      </nav>
+    
+      <!-- FIN Navbar-->
+
+<!-- Body-->
+
+<div class="container">
+      <body>
+          
+      
+    <div class="row"> 
+      <div class="col-sm-3 inputs"> <p style="color:#f0ebeb">AGREGAR PRODUCTO</p>
+        <form class="form-control" [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+          <div class="input-group mb-2">
+            <p>
+              Código:<input class="form-control" type="text" formControlName="codigo" />
+            </p>
+          </div>
+          <div class="input-group mb-2">
+            <p>
+              Nombre:<input class="form-control" type="text" formControlName="nombre" />
+            </p>
+          </div>
+          <div class="input-group mb-2">
+            <p>
+              Precio:<input class="form-control" type="number" formControlName="precio" />
+            </p>
+          </div>
+
+          <div class="input-group mb-2">
+            <p>
+              Cantidad:<input class="form-control" type="number" formControlName="cantidad" />
+            </p>
+          </div>
+
+          <div class="input-group mb-2">
+            <p>
+              Descripcion:<input class="form-control" type="text" formControlName="descripcion" />
+            </p>
+          </div>
+
+          <div class="input-group mb-2">
+            <p>
+              Stock:<input class="form-control" type="number" formControlName="stock" />
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-success" type="submit">Enviar</button>
+            <button class="btn btn-warning" type="reset">Limpiar</button>
+          </div>
+        </form>
+      </div>
+  
+      <div class="col-sm-9 tables"> <p style="color:#f0ebeb">LISTA DE PRODUCTO</p>
+        <table class="table table-dark"> 
+          <thead>
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">cantidad</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">Stock</th>
+              <th scope="col"></th>
+            </tr>
+            <tr *ngFor="let product of products ; let i = index" class="table-light ">
+              
+              <td>{{ product.codigo }}</td>
+              <td>{{ product.nombre }}</td>
+              <td>{{ product.precio }}</td>
+              <td>{{ product.cantidad }}</td>
+              <td>{{ product.descripcion }}</td>
+              <td>{{ product.stock }}</td>
+              <span class="cursor text-danger" (click) = "eliminarTarea(i)" >
+                  <i class="fas fa-trash-alt"></i></span>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div class="row"> 
+       <p style="color:#f0ebeb">AGREGAR PRODUCTO</p>
+     
+    </div>       
+    
+</body> 
+  </div>
+
+  <!-- Fin Body-->
+
+  <!-- footer -->
+  <footer class="bg-dark text-center text-white ">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white">Inicio</a>
+    </div>
+  </footer>
+
+  <!-- Fin footer -->
+  
